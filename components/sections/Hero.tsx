@@ -14,7 +14,7 @@ export function Hero() {
   const mediaScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
   const steelY = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
-  const words = ["Acero", "que", "sostiene", "México."];
+  const words = ["Acero", "que", "mueve", "proyectos."];
 
   return (
     <section
@@ -131,8 +131,8 @@ export function Hero() {
 
         <div className="flex flex-wrap items-end justify-between gap-10">
           <p className="max-w-[36ch] text-sm font-normal leading-[1.55] text-n-200">
-            Distribuimos los perfiles, planos y refuerzos que levantan las obras más exigentes del país. Atención
-            puntual. Inventario disponible. Entrega confiable.
+            Distribución de acero para proyectos industriales, construcción y estructuras metálicas. Productos
+            confiables, atención personalizada y capacidad de respuesta.
           </p>
           <div className="flex flex-wrap gap-3.5">
             <a

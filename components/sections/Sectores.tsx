@@ -12,7 +12,7 @@ const SECTORES: Sector[] = [
   {
     num: "01 — Énfasis",
     title: "Construcción",
-    desc: "Obra civil, edificación residencial, vivienda vertical e infraestructura urbana.",
+    desc: "Edificación, obra civil e infraestructura que requieren acero estructural de alta calidad.",
     feature: true,
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-14 w-14">
@@ -22,8 +22,8 @@ const SECTORES: Sector[] = [
   },
   {
     num: "02 — Énfasis",
-    title: "Industrial",
-    desc: "Plantas, fabricantes de maquinaria, equipo y línea blanca. Especificaciones críticas.",
+    title: "Industria Metal Mecánica",
+    desc: "Fabricantes y talleres que transforman el acero en productos y componentes industriales.",
     feature: true,
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-14 w-14">
@@ -37,7 +37,7 @@ const SECTORES: Sector[] = [
   {
     num: "03",
     title: "Estructuras Metálicas",
-    desc: "Talleres de naves, mezzanines y estructuras a medida.",
+    desc: "Talleres de naves, estructuras metálicas y proyectos a medida.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-10 w-10">
         <path d="M4 8h40M4 16h40M4 24h40M4 32h40M4 40h40M12 4v40M24 4v40M36 4v40" />
@@ -46,18 +46,8 @@ const SECTORES: Sector[] = [
   },
   {
     num: "04",
-    title: "Techadores",
-    desc: "Lámina galvanizada, perfiles de soporte y herraje.",
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-10 w-10">
-        <path d="M4 36L24 8l20 28M4 36h40M10 36v6h28v-6" />
-      </svg>
-    ),
-  },
-  {
-    num: "05",
-    title: "Distribuidores",
-    desc: "Volumen para reventa con condiciones comerciales claras.",
+    title: "Distribución y Gobierno",
+    desc: "Distribuidores mayoristas, sector privado y proyectos gubernamentales de gran escala.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-10 w-10">
         <path d="M4 16l20-8 20 8-20 8-20-8zM4 16v16l20 8 20-8V16M4 24l20 8 20-8" />
@@ -65,9 +55,19 @@ const SECTORES: Sector[] = [
     ),
   },
   {
+    num: "05",
+    title: "Techadores",
+    desc: "Lámina galvanizada, perfiles de soporte y herraje para cubiertas.",
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-10 w-10">
+        <path d="M4 36L24 8l20 28M4 36h40M10 36v6h28v-6" />
+      </svg>
+    ),
+  },
+  {
     num: "06",
-    title: "Ferreteros",
-    desc: "Surtido mixto, entregas escalonadas, soporte de catálogo.",
+    title: "Manufactura",
+    desc: "Producción y distribución de componentes con suministro confiable de acero.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-10 w-10">
         <rect x="6" y="10" width="36" height="32" />

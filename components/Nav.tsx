@@ -26,15 +26,16 @@ export function Nav() {
       style={{ paddingLeft: "var(--pad)", paddingRight: "var(--pad)" }}
     >
       <a href="#hero" className="flex items-center gap-3">
-        <div className="h-[34px] w-[34px] overflow-hidden rounded-full bg-bg-2 shadow-[0_0_0_1px_rgba(255,255,255,.08),inset_0_0_0_1px_rgba(255,255,255,.04)]">
-          <Image
-            src="/logo.jpeg"
-            alt="Enacero"
-            width={34}
-            height={34}
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <Image
+          src="/logo-mark.webp"
+          alt="Enacero — Encuentro Acerero MX"
+          width={40}
+          height={37}
+          priority
+          className={`w-auto object-contain transition-[height] duration-[350ms] ${
+            scrolled ? "h-9" : "h-10"
+          }`}
+        />
         <div className="text-[15px] font-semibold uppercase tracking-[.14em] text-n-100">
           Enacero
           <small className="mt-0.5 block text-[9px] font-medium tracking-[.22em] text-copper">

@@ -6,28 +6,28 @@ import { useRef } from "react";
 const STEPS = [
   {
     num: "01",
-    title: "Cotización ágil",
-    desc: "Respuesta misma jornada en pedidos estándar. Volumen y especificación validados.",
+    title: "Solicitud de requerimiento",
+    desc: "Recepción y análisis detallado de las necesidades específicas de tu proyecto.",
   },
   {
     num: "02",
-    title: "Asesoría técnica",
-    desc: "Revisión de grados, tolerancias y compatibilidad con el proyecto.",
+    title: "Ingeniería de suministro",
+    desc: "Evaluación técnica para determinar los productos óptimos para tu aplicación.",
   },
   {
     num: "03",
-    title: "Inventario disponible",
-    desc: "Existencia en almacén de los códigos de mayor rotación, listos para salida.",
+    title: "Propuesta técnica y comercial",
+    desc: "Cotización detallada con especificaciones y tiempos de entrega.",
   },
   {
     num: "04",
-    title: "Logística confiable",
-    desc: "Transporte propio y aliado, ruteo confirmado, ventana de entrega comprometida.",
+    title: "Logística y control de calidad",
+    desc: "Coordinación de transporte y verificación de estándares de calidad.",
   },
   {
     num: "05",
-    title: "Entrega puntual",
-    desc: "Material certificado, remisión documentada, soporte post-entrega.",
+    title: "Entrega en sitio",
+    desc: "Recepción puntual del material en tu ubicación con documentación completa.",
   },
 ];
 

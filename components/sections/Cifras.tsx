@@ -7,24 +7,22 @@ type Item = { plus?: boolean; target: number; unit?: string; label: string };
 
 const ITEMS: Item[] = [
   {
-    plus: true,
-    target: 25,
-    unit: "años",
-    label: "Años de operación distribuyendo acero a la industria mexicana [placeholder]",
+    target: 3,
+    label: "Líneas de producto: aceros planos, perfiles estructurales y de refuerzo.",
   },
   {
     plus: true,
-    target: 800,
-    label: "Proyectos atendidos en construcción e industria pesada [placeholder]",
+    target: 6,
+    label: "Sectores atendidos: construcción, industria, estructuras, distribución y más.",
   },
   {
-    target: 14,
-    unit: "estados",
-    label: "Estados de cobertura para entrega directa de material [placeholder]",
+    target: 100,
+    unit: "%",
+    label: "Material verificado bajo control de calidad en cada entrega.",
   },
   {
-    target: 4,
-    label: "Certificaciones activas en calidad y procesos [placeholder]",
+    target: 5,
+    label: "Pasos en nuestro proceso de suministro, de la solicitud a la entrega.",
   },
 ];
 

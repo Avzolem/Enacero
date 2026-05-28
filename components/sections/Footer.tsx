@@ -15,15 +15,13 @@ export function Footer() {
       >
         <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
           <div>
-            <div className="mb-5 h-12 w-12 overflow-hidden rounded-full">
-              <Image
-                src="/logo.jpeg"
-                alt="Enacero"
-                width={48}
-                height={48}
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <Image
+              src="/logo-mark.webp"
+              alt="Enacero — Encuentro Acerero MX"
+              width={62}
+              height={58}
+              className="mb-5 h-14 w-auto object-contain"
+            />
             <h3 className="text-sm font-semibold uppercase tracking-[.14em] text-n-100">
               ENACERO
               <small className="mt-1 block text-[11px] tracking-[.2em] text-copper">
@@ -39,10 +37,9 @@ export function Footer() {
           <FooterCol
             title="Productos"
             links={[
-              { label: "Estructurales", href: "#productos" },
-              { label: "Comerciales", href: "#productos" },
-              { label: "Planos", href: "#productos" },
-              { label: "Refuerzo", href: "#productos" },
+              { label: "Aceros Planos", href: "#productos" },
+              { label: "Perfiles Estructurales", href: "#productos" },
+              { label: "Aceros de Refuerzo", href: "#productos" },
             ]}
           />
 
@@ -50,9 +47,9 @@ export function Footer() {
             title="Sectores"
             links={[
               { label: "Construcción", href: "#sectores" },
-              { label: "Industrial", href: "#sectores" },
-              { label: "Estructuras", href: "#sectores" },
-              { label: "Distribuidores", href: "#sectores" },
+              { label: "Industria Metal Mecánica", href: "#sectores" },
+              { label: "Estructuras Metálicas", href: "#sectores" },
+              { label: "Distribución y Gobierno", href: "#sectores" },
             ]}
           />
 
@@ -60,7 +57,7 @@ export function Footer() {
             title="Contacto"
             links={[
               { label: "+52 554 889 6854", href: "https://wa.me/525548896854" },
-              { label: "contacto@acerossidiva.com", href: "mailto:contacto@acerossidiva.com" },
+              { label: "contacto@encuentroacerero.com.mx", href: "mailto:contacto@encuentroacerero.com.mx" },
               { label: "CDMX, México" },
             ]}
           />

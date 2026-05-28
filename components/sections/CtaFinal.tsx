@@ -62,14 +62,14 @@ export function CtaFinal() {
             />
             <ContactRow
               label="Email"
-              value="contacto@acerossidiva.com"
-              sub="Respuesta en máx. 4 horas"
-              href="mailto:contacto@acerossidiva.com"
+              value="contacto@encuentroacerero.com.mx"
+              sub="Respuesta puntual a tu requerimiento"
+              href="mailto:contacto@encuentroacerero.com.mx"
             />
             <ContactRow
-              label="Almacén"
-              value="Calle Ote. 182 #362"
-              sub="Col. Moctezuma 2da Secc, Venustiano Carranza, CDMX 15530"
+              label="Ubicación"
+              value="Ciudad de México"
+              sub="Cobertura a nivel nacional · entrega en sitio"
             />
           </div>
         </div>

@@ -4,16 +4,14 @@ import { motion, useScroll, useTransform, type MotionValue } from "framer-motion
 import { useRef } from "react";
 
 const WORDS: Array<{ text: string; em?: boolean; accent?: boolean }> = [
-  { text: "Distribuimos", em: true }, { text: "el" }, { text: "acero" }, { text: "que" },
-  { text: "levanta" }, { text: "los" }, { text: "proyectos" }, { text: "más" },
-  { text: "exigentes" }, { text: "de" }, { text: "México.", accent: true },
-  { text: "Desde" }, { text: "la" },
-  { text: "viga", em: true }, { text: "estructural", em: true },
-  { text: "hasta" }, { text: "la" },
-  { text: "varilla", em: true }, { text: "de", em: true }, { text: "obra.", em: true },
-  { text: "Atención" }, { text: "puntual." },
-  { text: "Seguimiento" }, { text: "continuo." },
-  { text: "Capacidad" }, { text: "de" }, { text: "respuesta." },
+  { text: "Nos" }, { text: "especializamos", em: true }, { text: "en" }, { text: "la" },
+  { text: "distribución", em: true }, { text: "y" }, { text: "suministro", em: true },
+  { text: "de" }, { text: "acero", accent: true }, { text: "para" }, { text: "los" }, { text: "sectores" },
+  { text: "industrial,", em: true }, { text: "construcción", em: true }, { text: "y" },
+  { text: "estructuras", em: true }, { text: "metálicas.", em: true },
+  { text: "Productos" }, { text: "confiables," }, { text: "atención" }, { text: "personalizada" },
+  { text: "y" }, { text: "soluciones" }, { text: "a" }, { text: "la" }, { text: "medida" },
+  { text: "de" }, { text: "cada" }, { text: "proyecto." },
 ];
 
 export function Statement() {

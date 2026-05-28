@@ -103,7 +103,7 @@ export function SparksCanvas() {
     <canvas
       ref={canvasRef}
       aria-hidden
-      className="pointer-events-none absolute inset-0 -z-10 opacity-90"
+      className="pointer-events-none absolute inset-0 -z-10 opacity-50 mix-blend-screen"
     />
   );
 }

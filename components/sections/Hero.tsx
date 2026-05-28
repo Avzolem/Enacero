@@ -23,23 +23,40 @@ export function Hero() {
       className="relative isolate flex min-h-screen items-end overflow-hidden bg-bg-0"
       style={{ padding: "0 var(--pad) clamp(60px,8vw,100px)" }}
     >
+      {/* Hero video — cinematic loop: aerial plant → furnace pour → welder → sparks slow-mo */}
       <motion.div
         aria-hidden
-        className="absolute inset-0 -z-20"
+        className="absolute inset-0 -z-20 overflow-hidden"
+        style={{ y: mediaY, scale: mediaScale }}
+      >
+        <video
+          src="/hero.mp4"
+          poster="/hero-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="h-full w-full object-cover"
+        />
+      </motion.div>
+
+      {/* Color grading overlay: darken + slight copper warmth for cinematic feel */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10"
         style={{
-          y: mediaY,
-          scale: mediaScale,
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 30%, rgba(194,111,58,.18), transparent 65%), radial-gradient(ellipse 90% 80% at 20% 90%, rgba(31,45,122,.22), transparent 60%), linear-gradient(180deg, #07080a 0%, #0a0c10 40%, #07080a 100%)",
+            "radial-gradient(ellipse 70% 60% at 50% 30%, rgba(194,111,58,.12), transparent 65%), radial-gradient(ellipse 90% 80% at 20% 90%, rgba(31,45,122,.16), transparent 60%), linear-gradient(180deg, rgba(7,8,10,.55) 0%, rgba(7,8,10,.35) 40%, rgba(7,8,10,.85) 100%)",
         }}
       />
 
       <div
         aria-hidden
-        className="pointer-events-none absolute -inset-[20%] -z-20"
+        className="pointer-events-none absolute -inset-[20%] -z-10"
         style={{
           background:
-            "radial-gradient(circle at 30% 70%, rgba(194,111,58,.12), transparent 35%)",
+            "radial-gradient(circle at 30% 70%, rgba(194,111,58,.08), transparent 35%)",
           animation: "drift 18s var(--ease-in-out-soft) infinite alternate",
         }}
       />

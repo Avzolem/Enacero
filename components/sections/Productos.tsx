@@ -69,7 +69,7 @@ export function Productos() {
     target: pinRef,
     offset: ["start start", "end end"],
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-240vw"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-220vw"]);
   const progressWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const progressNum = useTransform(scrollYProgress, (p) => {
     const n = Math.min(4, Math.max(1, Math.ceil(p * 4) || 1));
@@ -77,9 +77,16 @@ export function Productos() {
   });
 
   return (
-    <section id="productos" className="relative bg-bg-0 p-0">
-      <div ref={pinRef} className="relative" style={{ height: "400vh" }}>
-        <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
+    <section id="productos" className="bg-bg-0 p-0" style={{ position: "relative" }}>
+      <div ref={pinRef} style={{ position: "relative", height: "400vh" }}>
+        <div
+          className="flex flex-col overflow-hidden"
+          style={{
+            position: "sticky",
+            top: 0,
+            height: "100vh",
+          }}
+        >
           <div
             className="flex flex-shrink-0 flex-wrap items-end justify-between gap-10 pb-8 pt-20"
             style={{ paddingLeft: "var(--pad)", paddingRight: "var(--pad)" }}

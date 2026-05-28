@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MEXICO_PATHS } from "./mexico-paths";
 
 type Pin = {
   x: number;
@@ -8,118 +9,115 @@ type Pin = {
   r: number;
   label?: string;
   primary?: boolean;
-  labelX?: number;
-  labelY?: number;
+  labelAnchor?: "start" | "end" | "middle";
+  labelDx?: number;
+  labelDy?: number;
 };
 
+// Approximate lat/lon → viewBox-275×184 positions, hand-tuned against the source SVG
 const PINS: Pin[] = [
-  { x: 395, y: 350, r: 6, label: "CDMX", primary: true, labelX: 408, labelY: 354 },
-  { x: 370, y: 240, r: 4, label: "MTY", labelX: 380, labelY: 244 },
-  { x: 320, y: 320, r: 4, label: "GDL", labelX: 270, labelY: 324 },
-  { x: 435, y: 365, r: 3 },
-  { x: 375, y: 320, r: 3 },
-  { x: 105, y: 195, r: 3 },
-  { x: 475, y: 360, r: 3 },
-  { x: 700, y: 380, r: 3 },
-  { x: 340, y: 305, r: 3 },
-  { x: 425, y: 285, r: 3 },
+  // Primary
+  { x: 162, y: 130, r: 2.4, label: "CDMX", primary: true, labelDx: 5, labelDy: 1.5 },
+  // Major cities
+  { x: 152, y: 72, r: 1.7, label: "MONTERREY", labelDx: 4, labelDy: 1 },
+  { x: 132, y: 118, r: 1.7, label: "GUADALAJARA", labelAnchor: "end", labelDx: -4, labelDy: 1 },
+  { x: 244, y: 116, r: 1.7, label: "MÉRIDA", labelAnchor: "end", labelDx: -4, labelDy: 1 },
+  { x: 8, y: 12, r: 1.7, label: "TIJUANA", labelDx: 4, labelDy: 1 },
+  // Secondary (no labels — visual density only)
+  { x: 170, y: 134, r: 1.1 }, // Puebla
+  { x: 151, y: 122, r: 1.1 }, // Querétaro
+  { x: 188, y: 132, r: 1.1 }, // Veracruz
+  { x: 140, y: 117, r: 1.1 }, // León
+  { x: 173, y: 103, r: 1.1 }, // Tampico
 ];
-
-const COUNTRY_D = `
-M 70 200
-C 85 175, 110 165, 135 168
-C 155 170, 170 178, 188 192
-C 205 205, 220 210, 240 215
-C 270 222, 295 230, 320 245
-C 345 260, 365 268, 385 270
-C 410 272, 430 268, 450 260
-C 470 252, 488 240, 505 232
-C 525 222, 545 218, 565 222
-C 588 226, 605 240, 615 258
-C 622 272, 622 285, 615 300
-C 605 320, 590 332, 570 340
-C 555 346, 540 350, 525 355
-C 510 360, 498 372, 495 388
-C 493 398, 498 410, 510 418
-C 525 428, 545 432, 568 434
-C 590 436, 615 432, 635 422
-C 655 412, 670 398, 685 380
-C 695 368, 705 354, 720 348
-C 735 343, 750 348, 760 360
-C 770 372, 770 388, 762 402
-C 752 420, 735 432, 715 438
-C 690 446, 660 446, 632 442
-C 605 438, 580 432, 555 428
-C 530 425, 510 425, 490 432
-C 470 438, 455 448, 442 458
-C 430 466, 418 470, 405 468
-C 390 466, 380 458, 372 446
-C 365 435, 360 422, 352 410
-C 340 392, 322 380, 302 372
-C 280 364, 258 360, 238 354
-C 218 348, 200 340, 185 328
-C 168 314, 158 298, 148 282
-C 138 268, 128 256, 115 248
-C 100 240, 88 236, 78 228
-C 68 220, 65 210, 70 200 Z
-`;
 
 export function MexicoMap({ active }: { active: boolean }) {
   return (
     <svg
-      viewBox="0 0 800 480"
+      viewBox="0 0 275 184"
       fill="none"
       className="h-auto w-full"
-      style={{ filter: "drop-shadow(0 12px 60px rgba(194,111,58,.1))" }}
+      style={{ filter: "drop-shadow(0 12px 60px rgba(194,111,58,.12))" }}
     >
-      <motion.path
-        d={COUNTRY_D}
-        strokeLinejoin="round"
-        stroke="rgba(255,255,255,.4)"
-        strokeWidth={1}
-        fill={active ? "rgba(194,111,58,.05)" : "rgba(255,255,255,.03)"}
-        initial={{ pathLength: 0 }}
-        animate={active ? { pathLength: 1 } : { pathLength: 0 }}
-        transition={{ duration: 3, ease: [0.16, 1, 0.3, 1] }}
-      />
+      {/* Country outline — drawn path-by-path with stagger */}
+      <g>
+        {MEXICO_PATHS.map((d, i) => (
+          <motion.path
+            key={i}
+            d={d}
+            pathLength={1}
+            stroke="rgba(244,242,238,.45)"
+            strokeWidth={0.25}
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            fill={active ? "rgba(194,111,58,.04)" : "rgba(255,255,255,.015)"}
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={
+              active
+                ? { pathLength: 1, opacity: 1 }
+                : { pathLength: 0, opacity: 0 }
+            }
+            transition={{
+              pathLength: { duration: 2.5, delay: 0.02 * i, ease: [0.16, 1, 0.3, 1] },
+              opacity: { duration: 0.4, delay: 0.02 * i },
+            }}
+          />
+        ))}
+      </g>
+
+      {/* Pins */}
       <g>
         {PINS.map((p, i) => (
           <g key={i}>
+            {/* Pulsing ring */}
             <motion.circle
               cx={p.x}
               cy={p.y}
               r={p.r}
               fill="none"
               stroke="var(--color-copper)"
-              strokeWidth={1}
+              strokeWidth={0.3}
               initial={{ opacity: 0 }}
               animate={active ? { opacity: 1 } : { opacity: 0 }}
               style={{
                 transformBox: "fill-box",
                 transformOrigin: "center",
                 animation: active ? "pin-ring 2.4s ease-out infinite" : "none",
+                animationDelay: `${i * 0.15}s`,
               }}
             />
+            {/* Solid dot */}
             <motion.circle
               cx={p.x}
               cy={p.y}
               r={p.r}
-              fill="var(--color-copper)"
-              initial={{ opacity: 0 }}
-              animate={active ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
+              fill={p.primary ? "var(--color-copper-bright)" : "var(--color-copper)"}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={active ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 1.4 + i * 0.08,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              style={{ transformBox: "fill-box", transformOrigin: "center" }}
             />
+            {/* Label */}
             {p.label && (
-              <text
-                x={p.labelX}
-                y={p.labelY}
-                fill={p.primary ? "var(--color-copper)" : "rgba(255,255,255,.7)"}
-                fontFamily="General Sans"
-                fontSize={p.primary ? 11 : 10}
-                fontWeight={p.primary ? 600 : 400}
+              <motion.text
+                x={p.x + (p.labelDx ?? 3)}
+                y={p.y + (p.labelDy ?? 1)}
+                fill={p.primary ? "var(--color-copper)" : "rgba(244,242,238,.75)"}
+                fontFamily="General Sans, Inter, sans-serif"
+                fontSize={p.primary ? 4.2 : 3.2}
+                fontWeight={p.primary ? 700 : 500}
+                letterSpacing={p.primary ? 0.35 : 0.25}
+                textAnchor={p.labelAnchor ?? "start"}
+                initial={{ opacity: 0 }}
+                animate={active ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.6, delay: 1.7 + i * 0.08 }}
               >
                 {p.label}
-              </text>
+              </motion.text>
             )}
           </g>
         ))}

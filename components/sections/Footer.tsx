@@ -15,19 +15,22 @@ export function Footer() {
       >
         <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
           <div>
-            <Image
-              src="/logo-mark.webp"
-              alt="Enacero — Encuentro Acerero MX"
-              width={62}
-              height={58}
-              className="mb-5 h-14 w-auto object-contain"
-            />
-            <h3 className="text-sm font-semibold uppercase tracking-[.14em] text-n-100">
-              ENACERO
-              <small className="mt-1 block text-[11px] tracking-[.2em] text-copper">
-                Encuentro Acerero MX
-              </small>
-            </h3>
+            <div className="mb-5 flex items-center gap-3.5">
+              <Image
+                src="/logo-mark.webp"
+                alt=""
+                width={62}
+                height={58}
+                className="h-14 w-auto object-contain"
+              />
+              <Image
+                src="/logo-word-light.webp"
+                alt="Enacero — Encuentro Acerero MX"
+                width={1490}
+                height={371}
+                className="h-9 w-auto object-contain"
+              />
+            </div>
             <p className="mt-5 max-w-[32ch] text-[13px] leading-[1.55] text-n-400">
               Distribuidora de acero B2B con base en Ciudad de México. Servicio a construcción, industria,
               fabricantes, techadores y distribuidores.

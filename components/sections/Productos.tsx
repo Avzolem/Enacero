@@ -3,9 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ProductoCard, type Producto } from "./ProductoCard";
-import { ProductoVisualBeam } from "@/components/visuals/ProductoVisualBeam";
-import { ProductoVisualSheet } from "@/components/visuals/ProductoVisualSheet";
-import { ProductoVisualRebar } from "@/components/visuals/ProductoVisualRebar";
+import { ProductoVisualPhoto } from "@/components/visuals/ProductoVisualPhoto";
 
 const PRODUCTOS: Producto[] = [
   {
@@ -19,7 +17,7 @@ const PRODUCTOS: Producto[] = [
       "Placa de acero de alta calidad",
       "Lámina negra y comercial",
     ],
-    visual: <ProductoVisualSheet />,
+    visual: <ProductoVisualPhoto src="/prod-planos.webp" alt="Lámina y rollo de acero galvanizado" />,
   },
   {
     idx: "02 / 03",
@@ -32,7 +30,7 @@ const PRODUCTOS: Producto[] = [
       "Ángulo y solera",
       "Redondo y cuadrado",
     ],
-    visual: <ProductoVisualBeam />,
+    visual: <ProductoVisualPhoto src="/prod-estructurales.webp" alt="Viga IPR de acero al carbón" delay={1.2} />,
   },
   {
     idx: "03 / 03",
@@ -45,7 +43,7 @@ const PRODUCTOS: Producto[] = [
       "Refuerzo para concreto",
       "Material para obra civil",
     ],
-    visual: <ProductoVisualRebar />,
+    visual: <ProductoVisualPhoto src="/prod-refuerzo.webp" alt="Varilla corrugada, malla electrosoldada y alambrón" delay={2.4} />,
   },
 ];
 

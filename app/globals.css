@@ -90,3 +90,7 @@ html.lenis, html.lenis body { height: auto; }
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+@keyframes product-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}

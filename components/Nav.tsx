@@ -18,17 +18,33 @@ export function Nav() {
   return (
     <nav
       aria-label="Principal"
-      className={`fixed inset-x-0 top-0 z-[60] flex items-center justify-between transition-[background,backdrop-filter,padding] duration-[350ms] ${
-        scrolled
-          ? "border-b border-white/[.06] bg-bg-0/70 py-3 backdrop-blur-xl backdrop-saturate-[1.4]"
-          : "py-[18px]"
+      className={`fixed inset-x-0 top-0 z-[60] flex items-center justify-between transition-[background,backdrop-filter,box-shadow,padding] duration-[450ms] ${
+        scrolled ? "py-3" : "py-[18px]"
       }`}
-      style={{ paddingLeft: "var(--pad)", paddingRight: "var(--pad)" }}
+      style={{
+        paddingLeft: "var(--pad)",
+        paddingRight: "var(--pad)",
+        ...(scrolled
+          ? {
+              background:
+                "linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04) 55%, rgba(255,255,255,0)), rgba(13,14,17,.38)",
+              backdropFilter: "blur(24px) saturate(185%) brightness(1.04)",
+              WebkitBackdropFilter: "blur(24px) saturate(185%) brightness(1.04)",
+              boxShadow:
+                "inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(255,255,255,.05), 0 10px 36px rgba(0,0,0,.28)",
+            }
+          : {
+              background: "transparent",
+              backdropFilter: "blur(0px)",
+              WebkitBackdropFilter: "blur(0px)",
+              boxShadow: "none",
+            }),
+      }}
     >
       <a href="#hero" className="flex items-center gap-3">
         <Image
           src="/logo-mark.webp"
-          alt="Enacero — Encuentro Acerero MX"
+          alt=""
           width={40}
           height={37}
           priority
@@ -36,12 +52,16 @@ export function Nav() {
             scrolled ? "h-9" : "h-10"
           }`}
         />
-        <div className="text-[15px] font-semibold uppercase tracking-[.14em] text-n-100">
-          Enacero
-          <small className="mt-0.5 block text-[9px] font-medium tracking-[.22em] text-copper">
-            Encuentro Acerero MX
-          </small>
-        </div>
+        <Image
+          src="/logo-word-light.webp"
+          alt="Enacero — Encuentro Acerero MX"
+          width={1490}
+          height={371}
+          priority
+          className={`w-auto object-contain transition-[height] duration-[350ms] ${
+            scrolled ? "h-[22px]" : "h-[26px]"
+          }`}
+        />
       </a>
 
       <div className="hidden items-center gap-1 md:flex">

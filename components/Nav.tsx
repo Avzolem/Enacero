@@ -2,11 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useTheme } from "@/hooks/useTheme";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const { toggle } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -82,15 +80,6 @@ export function Nav() {
       </div>
 
       <div className="flex items-center gap-1.5">
-        <button
-          onClick={toggle}
-          aria-label="Cambiar tema"
-          className="grid h-[38px] w-[38px] place-items-center rounded-full border border-white/10 text-n-200 transition-colors hover:border-copper hover:text-copper"
-        >
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6">
-            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
-          </svg>
-        </button>
         <a
           href="https://wa.me/525548896854"
           aria-label="WhatsApp"
